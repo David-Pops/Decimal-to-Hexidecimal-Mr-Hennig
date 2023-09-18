@@ -10,7 +10,10 @@ import CoreData
 
 struct binary_stuff: View {
     var body: some View {
-        Text("ER")
+        //TextField("binary number", text: <#T##Binding<String>#>)
+        
+        
+        
     }
 }
 
