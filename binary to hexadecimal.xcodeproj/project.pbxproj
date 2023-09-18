@@ -16,6 +16,7 @@
 		E568C90B2AB8A4280045CF3B /* binary_to_hexadecimalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E568C90A2AB8A4280045CF3B /* binary_to_hexadecimalTests.swift */; };
 		E568C9152AB8A4280045CF3B /* binary_to_hexadecimalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E568C9142AB8A4280045CF3B /* binary_to_hexadecimalUITests.swift */; };
 		E568C9172AB8A4280045CF3B /* binary_to_hexadecimalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E568C9162AB8A4280045CF3B /* binary_to_hexadecimalUITestsLaunchTests.swift */; };
+		E5A6B6422AB8A9CE001CA6CE /* binary stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A6B6412AB8A9CE001CA6CE /* binary stuff.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E568C9102AB8A4280045CF3B /* binary to hexadecimalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "binary to hexadecimalUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E568C9142AB8A4280045CF3B /* binary_to_hexadecimalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = binary_to_hexadecimalUITests.swift; sourceTree = "<group>"; };
 		E568C9162AB8A4280045CF3B /* binary_to_hexadecimalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = binary_to_hexadecimalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E5A6B6412AB8A9CE001CA6CE /* binary stuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "binary stuff.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E568C8F42AB8A4270045CF3B /* binary_to_hexadecimalApp.swift */,
+				E5A6B6412AB8A9CE001CA6CE /* binary stuff.swift */,
 				E568C8F62AB8A4270045CF3B /* ContentView.swift */,
 				E568C8F82AB8A4280045CF3B /* Assets.xcassets */,
 				E568C8FD2AB8A4280045CF3B /* Persistence.swift */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E568C8FE2AB8A4280045CF3B /* Persistence.swift in Sources */,
+				E5A6B6422AB8A9CE001CA6CE /* binary stuff.swift in Sources */,
 				E568C9012AB8A4280045CF3B /* binary_to_hexadecimal.xcdatamodeld in Sources */,
 				E568C8F72AB8A4270045CF3B /* ContentView.swift in Sources */,
 				E568C8F52AB8A4270045CF3B /* binary_to_hexadecimalApp.swift in Sources */,
