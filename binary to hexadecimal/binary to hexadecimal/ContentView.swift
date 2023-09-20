@@ -9,12 +9,18 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @State private var numero: String = "0000"
+
     var body: some View {
-        Text("ER")
+        VStack() {
+            TextField("enter number", text: $numero)
+           
+            if numero == "000" {
+               
+            }
+        }
     }
 }
-//dffhdkjslr
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

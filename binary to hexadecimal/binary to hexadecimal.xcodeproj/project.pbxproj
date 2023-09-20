@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0CA3822AB8AAD40087BE58 /* binary stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0CA3812AB8AAD40087BE58 /* binary stuff.swift */; };
 		E568C8F52AB8A4270045CF3B /* binary_to_hexadecimalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E568C8F42AB8A4270045CF3B /* binary_to_hexadecimalApp.swift */; };
 		E568C8F72AB8A4270045CF3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E568C8F62AB8A4270045CF3B /* ContentView.swift */; };
 		E568C8F92AB8A4280045CF3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E568C8F82AB8A4280045CF3B /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E0CA3812AB8AAD40087BE58 /* binary stuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "binary stuff.swift"; sourceTree = SOURCE_ROOT; };
 		E568C8F12AB8A4270045CF3B /* binary to hexadecimal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "binary to hexadecimal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E568C8F42AB8A4270045CF3B /* binary_to_hexadecimalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = binary_to_hexadecimalApp.swift; sourceTree = "<group>"; };
 		E568C8F62AB8A4270045CF3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				E568C8F82AB8A4280045CF3B /* Assets.xcassets */,
 				E568C8FD2AB8A4280045CF3B /* Persistence.swift */,
 				E568C8FF2AB8A4280045CF3B /* binary_to_hexadecimal.xcdatamodeld */,
+				5E0CA3812AB8AAD40087BE58 /* binary stuff.swift */,
 				E568C8FA2AB8A4280045CF3B /* Preview Content */,
 			);
 			path = "binary to hexadecimal";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E568C8FE2AB8A4280045CF3B /* Persistence.swift in Sources */,
+				5E0CA3822AB8AAD40087BE58 /* binary stuff.swift in Sources */,
 				E568C9012AB8A4280045CF3B /* binary_to_hexadecimal.xcdatamodeld in Sources */,
 				E568C8F72AB8A4270045CF3B /* ContentView.swift in Sources */,
 				E568C8F52AB8A4270045CF3B /* binary_to_hexadecimalApp.swift in Sources */,
