@@ -15,35 +15,26 @@ struct binary_stuff: View {
     
     var body: some View {
         VStack{
-            //TextField("binary number", text: $binaryNumber)
-            
             TextField(text: $binaryNumber, prompt: Text("Required")) {
             }
             
-            Text("Hexadecimal: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16)))")
-            Text("Binary: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 2)))")
+            Text("Hexadecimal: \(getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16))")
+            Text("Binary: \(getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 2))")
         }
     }
 }
 
-
-
 public func unArrayify(number: [Int]) -> String{
-    var digitsPlace = 0
-    var betterArray = number
     var outputInt: String = ""
-    for i in betterArray{
-        
+    for i in number{
         var mutable_i = base16ification(number: i)
-        
         outputInt += mutable_i
-        
     }
     return "\(outputInt)"
 }
 
 
-public func getDigits_in_number(number: Int, base: Int) -> [Int]{
+public func getDigits_in_number(number: Int, base: Int) -> String{
     var editableNumber = number
     var arrayInt = [Int]()
     arrayInt.append(editableNumber%base)
@@ -53,7 +44,7 @@ public func getDigits_in_number(number: Int, base: Int) -> [Int]{
         arrayInt.insert(editableNumber%base, at: 0)
     }
     
-    return arrayInt
+    return unArrayify(number: arrayInt)
 }
 
 public func base16ification(number: Int) -> String{
