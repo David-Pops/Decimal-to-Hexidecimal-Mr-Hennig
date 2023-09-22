@@ -20,35 +20,33 @@ struct binary_stuff: View {
             TextField(text: $binaryNumber, prompt: Text("Required")) {
             }
             
-            ForEach(getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16), id: \.self){ i in
-                Text("\(i)")
+            //ForEach(getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16), id: \.self){ i in
+            //    Text("\(i)")
                 
-                
-                
-            }
-            //Text("\($0)")
+            //}
+            
+            Text("Hexadecimal: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16)))")
+            Text("Binary: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 2)))")
         }
     }
 }
 
 
 
-func unArrayify(number: [Int]){
-    var betterArray = number.reversed()
+func unArrayify(number: [Int]) -> String{
+    var digitsPlace = 0
+    var betterArray = number
+    var outputInt: String = ""
     for i in betterArray{
         
+        var mutable_i = base16ification(number: i)
+        
+        outputInt += mutable_i
         
     }
+    return "\(outputInt)"
 }
 
-func binary_to_decimal(numberInDigits: [Int]) -> [Int]{
-    var newNumber: [Int] = [43]
-    for i in numberInDigits{
-        print(i)
-        
-    }
-    return newNumber
-}
 
 func getDigits_in_number(number: Int, base: Int) -> [Int]{
     var editableNumber = number
@@ -62,6 +60,31 @@ func getDigits_in_number(number: Int, base: Int) -> [Int]{
     
     return arrayInt
 }
+
+func base16ification(number: Int) -> String{
+    if number == 10{
+        return "a"
+    }
+    else if number == 11{
+        return "b"
+    }
+    else if number == 12{
+        return "c"
+    }
+    else if number == 13{
+        return "d"
+    }
+    else if number == 14{
+        return "e"
+    }
+    else if number == 15{
+        return "f"
+    }
+    else{
+        return "\(number)"
+    }
+}
+
 
 struct binary_stuff_Previews: PreviewProvider {
     static var previews: some View {
