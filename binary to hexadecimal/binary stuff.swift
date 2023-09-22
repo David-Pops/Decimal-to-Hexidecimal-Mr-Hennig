@@ -10,16 +10,27 @@ import CoreData
 
 struct binary_stuff: View {
     
-    @State private var binaryNumber:String = "1"
-    
+    @State private var binaryNumber:String = ""
+    @State private var baseNumber:String = ""
     
     var body: some View {
         VStack{
             TextField(text: $binaryNumber, prompt: Text("input decimal number")) {
             }
+            .padding()
+            //TextField(text: $baseNumber, prompt: Text("input base"))
+            .padding()
             
-            Text("Hexadecimal: \(getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16))")
-            Text("Binary: \(getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 2))")
+            Text("Hexadecimal: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16)))")
+            Text("Binary: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 2)))")
+            //Text("Decimal: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 10)))")
+            //Text("\(binary_to_decimals(number: Int(binaryNumber) ?? 0))")
+        }
+        VStack{
+            
+            
+            
+            
         }
     }
 }
@@ -27,14 +38,13 @@ struct binary_stuff: View {
 public func unArrayify(number: [Int]) -> String{
     var outputInt: String = ""
     for i in number{
-        var mutable_i = base16ification(number: i)
-        outputInt += mutable_i
+        outputInt += base16ification(number: i)
     }
     return "\(outputInt)"
 }
 
 
-public func getDigits_in_number(number: Int, base: Int) -> String{
+public func getDigits_in_number(number: Int, base: Int) -> [Int]{
     var editableNumber = number
     var arrayInt = [Int]()
     arrayInt.append(editableNumber%base)
@@ -43,8 +53,8 @@ public func getDigits_in_number(number: Int, base: Int) -> String{
         editableNumber = editableNumber/base
         arrayInt.insert(editableNumber%base, at: 0)
     }
-    
-    return unArrayify(number: arrayInt)
+
+    return arrayInt
 }
 
 public func base16ification(number: Int) -> String{
@@ -71,15 +81,23 @@ public func base16ification(number: Int) -> String{
     }
 }
 
+func binary_to_decimals(number: Int) -> Double{
+    var a = number % Int(pow(2, log2(Double(number)) + 1))
+    var b = Double(a) / pow(2, log2(Double(number)))
+    
+    return b
+}
+
+func betterLog(number: Int, base: Int) -> Double {
+    return log(Double(number))/log(Double(base))
+}
+
 
 struct binary_stuff_Previews: PreviewProvider {
     static var previews: some View {
         binary_stuff().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
-
-
-
 
 
 
