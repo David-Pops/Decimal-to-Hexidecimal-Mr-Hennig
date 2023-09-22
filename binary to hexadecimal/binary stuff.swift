@@ -15,7 +15,7 @@ struct binary_stuff: View {
     
     var body: some View {
         VStack{
-            TextField(text: $binaryNumber, prompt: Text("Required")) {
+            TextField(text: $binaryNumber, prompt: Text("input decimal number")) {
             }
             
             Text("Hexadecimal: \(getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16))")
