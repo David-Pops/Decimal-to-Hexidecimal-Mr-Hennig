@@ -20,11 +20,6 @@ struct binary_stuff: View {
             TextField(text: $binaryNumber, prompt: Text("Required")) {
             }
             
-            //ForEach(getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16), id: \.self){ i in
-            //    Text("\(i)")
-                
-            //}
-            
             Text("Hexadecimal: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16)))")
             Text("Binary: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 2)))")
         }
@@ -33,7 +28,7 @@ struct binary_stuff: View {
 
 
 
-func unArrayify(number: [Int]) -> String{
+public func unArrayify(number: [Int]) -> String{
     var digitsPlace = 0
     var betterArray = number
     var outputInt: String = ""
@@ -48,7 +43,7 @@ func unArrayify(number: [Int]) -> String{
 }
 
 
-func getDigits_in_number(number: Int, base: Int) -> [Int]{
+public func getDigits_in_number(number: Int, base: Int) -> [Int]{
     var editableNumber = number
     var arrayInt = [Int]()
     arrayInt.append(editableNumber%base)
@@ -61,7 +56,7 @@ func getDigits_in_number(number: Int, base: Int) -> [Int]{
     return arrayInt
 }
 
-func base16ification(number: Int) -> String{
+public func base16ification(number: Int) -> String{
     if number == 10{
         return "a"
     }
