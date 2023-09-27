@@ -12,6 +12,8 @@ struct binary_stuff: View {
     
     @State private var binaryNumber:String = ""
     @State private var baseNumber:String = ""
+    @State private var decimalNumber: String = ""
+    @State private var hexaNumber: String = ""
     
     var body: some View {
         VStack{
@@ -19,16 +21,25 @@ struct binary_stuff: View {
             }
             .padding()
             //TextField(text: $baseNumber, prompt: Text("input base"))
-            .padding()
-            
             Text("Hexadecimal: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 16)))")
             Text("Binary: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 2)))")
-            //Text("Decimal: \(unArrayify(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 10)))")
-            //Text("\(binary_to_decimals(number: Int(binaryNumber) ?? 0))")
-        }
-        VStack{
+            //Text("decimal: \(binary_to_base(number: getDigits_in_number(number: Int(binaryNumber) ?? 0, base: 2), base: 2))")
             
             
+        
+            TextField(text: $decimalNumber, prompt: Text("binary number please")){
+            }
+            .padding()
+            Text("decimal: \(binary_to_decimal(number: getDigits_in_number(number: Int(decimalNumber) ?? 0, base: 10)))")
+            var wer = binary_to_decimal(number: getDigits_in_number(number: Int(decimalNumber) ?? 0, base: 10))
+            Text("hexadecimal: \(unArrayify(number: getDigits_in_number(number: Int(wer) ?? 0, base: 16)))")
+            
+            
+            
+            //TextField(text: $hexaNumber, prompt: Text("hexadecimal number please")){
+            //}
+            //.padding()
+            //Text("decimal: \(hexa_to_binary(number: digitification(number: hexaNumber)))")
             
             
         }
@@ -43,6 +54,27 @@ public func unArrayify(number: [Int]) -> String{
     return "\(outputInt)"
 }
 
+func digitification(number:String) -> [String]{
+    var numberArray: [String] = ["0"]
+    var repeater = 0
+    for i in 0...number.count{
+        numberArray[repeater] = String(number.prefix(i))
+        
+        repeater += 1
+    }
+    return numberArray
+}
+
+func hexa_to_binary(number: [String]) -> Int{
+    var total = 0
+    for i in number{
+        var mut_i = reversebase16ification(number: i)
+        total += Int(mut_i) ?? 0
+        
+    }
+    return total
+}
+
 
 public func getDigits_in_number(number: Int, base: Int) -> [Int]{
     var editableNumber = number
@@ -53,8 +85,20 @@ public func getDigits_in_number(number: Int, base: Int) -> [Int]{
         editableNumber = editableNumber/base
         arrayInt.insert(editableNumber%base, at: 0)
     }
-
+    
     return arrayInt
+}
+
+public func binary_to_decimal(number: [Int]) -> String{
+    var repeater = 0
+    var total = 0
+    var betterArray = number.reversed()
+    for i in betterArray{
+        total += i * Int(pow(Double(2), Double(repeater)))
+        
+        repeater += 1
+    }
+    return String(total)
 }
 
 public func base16ification(number: Int) -> String{
@@ -81,12 +125,37 @@ public func base16ification(number: Int) -> String{
     }
 }
 
-func binary_to_decimals(number: Int) -> Double{
-    var a = number % Int(pow(2, log2(Double(number)) + 1))
-    var b = Double(a) / pow(2, log2(Double(number)))
+func reversebase16ification(number: String) -> String{
+    if number == "a"{
+        return "10"
+    }
+    else if number == "b"{
+        return "11"
+    }
+    else if number == "c"{
+        return "12"
+    }
+    else if number == "d"{
+        return "13"
+    }
+    else if number == "e"{
+        return "14"
+    }
+    else if number == "f"{
+        return "15"
+    }
+    else{
+        return "\(number)"
+    }
     
-    return b
+    
+    
+    
+    
+    
+    
 }
+
 
 func betterLog(number: Int, base: Int) -> Double {
     return log(Double(number))/log(Double(base))
